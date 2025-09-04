@@ -1,308 +1,172 @@
-# ConstructBot - Construction Industry AI Chatbot
+🏗️ ConstructBot Professional
 
-A ChatGPT-like interface specifically designed for the construction industry, powered by open-source LLMs with# ConstructBot Professional - AI Construction Industry Assistant
+AI-Powered Assistant for the Construction Industry
 
-A professional AI-powered chatbot specialized in construction industry consultation, featuring Indian construction standards, building codes, and market expertise.
+ConstructBot Professional is a specialized chatbot designed for civil engineers, architects, contractors, and construction managers.
+It combines open-source LLMs with Google Gemini API fallback to deliver accurate, domain-restricted answers focused on construction practices, Indian building codes, and cost data.
 
-## 🏗️ Features
+✨ Key Features
 
-- **AI-Powered Responses**: Uses Google Gemini API for intelligent, contextual answers
-- **Construction Industry Focus**: Specialized knowledge in civil engineering, project management, safety, and materials
-- **Indian Standards Integration**: Comprehensive knowledge of IS codes, NBC requirements, and local regulations
-- **Professional Interface**: ChatGPT-like interface optimized for construction professionals
-- **Persistent User Preferences**: Remembers user settings across sessions
-- **Real-time Cost Data**: Current Indian market rates and pricing information
+Construction-Focused AI
+Answers restricted to civil engineering, project management, materials, safety, cost estimation, and Indian standards.
 
-## 🚀 Deployment on Vercel
+Indian Standards Integration
+Includes IS Codes, NBC guidelines, and local regulations for compliance.
 
-### Prerequisites
-- Node.js 18+ installed
-- Vercel account
-- Google Gemini API key
+Dual AI Model Support
 
-### Step 1: Clone and Setup
-```bash
-git clone [your-repo-url]
-cd chatbot
+Open-source LLM (configurable for Ollama, etc.)
+
+Google Gemini API fallback for reliability.
+
+Professional Chat Interface
+
+ChatGPT-like design
+
+Sidebar with conversation history
+
+Markdown + code formatting
+
+Mobile responsive
+
+Market Expertise
+
+Real-time construction material costs (India)
+
+Cost estimation and budgeting guidance
+
+📋 Example Use Cases
+
+Materials & Properties:
+“What are the types of concrete and their applications?”
+
+Project Management:
+“How do I prepare a construction project timeline?”
+
+Safety & Regulations:
+“What are the NBC fire safety requirements for high-rise buildings?”
+
+Cost Estimation:
+“Estimate brickwork cost for a 1000 sq.ft. project in Delhi.”
+
+🛠️ Technology Stack
+
+Frontend: React 18 + Vite
+
+Styling: Pure CSS (lightweight, responsive)
+
+AI Layer:
+
+Open-source LLMs (Ollama, LLaMA, etc.)
+
+Google Gemini API (fallback)
+
+Markdown Rendering: react-markdown
+
+HTTP Client: Axios
+
+Deployment: Vercel (CDN, auto-builds)
+
+📂 Project Structure
+src/
+├── components/          # Chat UI components
+│   ├── ChatWindow.jsx   # Main conversation area
+│   ├── ChatSidebar.jsx  # Conversation history
+│   └── ChatInput.jsx    # User input field
+├── lib/                 # Core services
+│   ├── gemini.js        # Gemini API integration
+│   ├── llm.js           # Open-source LLM service
+│   ├── chatService.js   # Chat orchestration
+│   └── domainGuard.js   # Construction domain validation
+└── App.jsx              # Root application
+
+🚀 Getting Started
+1. Clone & Install
+git clone <your-repo-url>
+cd constructbot
 npm install
-```
 
-### Step 2: Environment Configuration
-1. Create a `.env.production` file in the root directory
-2. Add your Gemini API key:
-```env
-VITE_GEMINI_API_KEY=your_actual_gemini_api_key_here
-```
+2. Configure Environment Variables
 
-### Step 3: Build and Test Locally
-```bash
-npm run build
-npm run preview
-```
+Create .env in project root:
 
-### Step 4: Deploy to Vercel
+VITE_GEMINI_API_KEY=your_api_key_here
+VITE_APP_NAME=ConstructBot Professional
+VITE_ENVIRONMENT=production
 
-#### Option A: Using Vercel CLI
-```bash
+3. Run Development Server
+npm run dev
+
+
+Open → http://localhost:5173
+
+🌐 Deployment (Vercel)
+Option A: Vercel CLI
 npm install -g vercel
 vercel login
 vercel
-```
-
-#### Option B: Using Vercel Dashboard
-1. Go to [vercel.com](https://vercel.com)
-2. Import your GitHub repository
-3. Configure environment variables in Vercel dashboard:
-   - Add `VITE_GEMINI_API_KEY` with your API key
-4. Deploy
-
-### Step 5: Configure Environment Variables in Vercel
-1. Go to your project dashboard on Vercel
-2. Navigate to Settings → Environment Variables
-3. Add the following variables:
-   - `VITE_GEMINI_API_KEY`: Your Google Gemini API key
-   - `VITE_APP_NAME`: "ConstructBot Professional"
-   - `VITE_ENVIRONMENT`: "production"
-
-## 🔧 Configuration Files
-
-### vercel.json
-- Configures Vercel deployment settings
-- Sets up SPA routing for React application
-- Optimizes build process
-
-### vite.config.js
-- Production build optimizations
-- Code splitting for better performance
-- Source maps for debugging
-
-## 🏗️ Architecture
-
-```
-src/
-├── components/          # React components
-│   ├── ChatWindow.jsx   # Main chat interface
-│   ├── ChatSidebar.jsx  # Conversation history
-│   └── ChatInput.jsx    # Message input component
-├── lib/                 # Core services
-│   ├── gemini.js        # Google Gemini API integration
-│   ├── llm.js           # Local LLM service (fallback)
-│   ├── chatService.js   # Main chat orchestration
-│   └── domainGuard.js   # Construction domain validation
-└── App.jsx              # Main application component
-```
-
-## 🔒 Security Considerations
-
-- API keys are stored as environment variables
-- Client-side domain validation prevents misuse
-- CORS and security headers configured for production
-- No sensitive data stored in localStorage
-
-## 🎯 Production Optimizations
-
-- **Code Splitting**: Vendor chunks for better caching
-- **Compression**: Gzip compression enabled
-- **CDN**: Vercel's global CDN for fast loading
-- **Source Maps**: Available for debugging production issues
-
-## 📋 Pre-Deployment Checklist
-
-- [ ] Environment variables configured in Vercel
-- [ ] Build process tested locally (`npm run build`)
-- [ ] API integrations working in production environment
-- [ ] Domain validation properly filtering queries
-- [ ] Error handling and fallbacks implemented
-- [ ] Performance optimizations applied
-
-## 🛠️ Troubleshooting
-
-### Common Issues:
-
-1. **API Key Not Working**
-   - Verify environment variable name: `VITE_GEMINI_API_KEY`
-   - Check API key permissions in Google Cloud Console
-
-2. **Build Failures**
-   - Run `npm run build` locally to identify issues
-   - Check for missing dependencies or import errors
-
-3. **Routing Issues**
-   - Ensure `vercel.json` is properly configured
-   - Verify SPA routing settings
-
-## 📞 Support
-
-For technical support or questions about construction industry features, refer to the in-app help or example questions.
-
-## 🔄 Updates
-
-The application automatically updates when deployed through Vercel. Check the Vercel dashboard for deployment status and logs.i API fallback.
-
-## 🏗️ Features
-
-- **Domain-Restricted AI**: Only answers construction industry related questions
-- **Dual AI Model Support**: Primary open-source LLM with Google Gemini fallback
-- **Modern Chat Interface**: Clean, responsive UI similar to ChatGPT
-- **Conversation History**: Sidebar with persistent chat sessions
-- **Markdown Support**: Rich formatting for technical responses
-- **Mobile Responsive**: Works on all device sizes
-- **Real-time Typing Indicators**: Visual feedback during response generation
-
-## 🚀 Technology Stack
-
-- **Frontend**: React 18 + Vite
-- **Styling**: Pure CSS with modern features
-- **AI Integration**: 
-  - Open-source LLMs (configurable for Ollama, etc.)
-  - Google Gemini API (fallback)
-- **Markdown Rendering**: react-markdown
-- **HTTP Client**: Axios
-
-## 📋 Construction Topics Covered
-
-- Civil Engineering & Structural Design
-- Building Materials & Properties
-- Construction Project Management
-- Safety Regulations & Protocols
-- Cost Estimation & Budgeting
-- Architecture & Building Codes
-- Construction Equipment & Techniques
-- Quality Control & Inspections
-- HVAC, Electrical, and Plumbing Systems
-- Site Planning & Surveying
-
-## 🛠️ Installation & Setup
-
-1. **Install dependencies:**
-   ```bash
-   npm install
-   ```
-
-2. **Configure AI Services:**
-   
-   **For Open-source LLM (Ollama example):**
-   - Install Ollama: https://ollama.ai/
-   - Pull a model: `ollama pull llama3`
-   - Start Ollama service: `ollama serve`
-   - Update the LLM endpoint in `src/lib/llm.js` if needed
-
-   **For Gemini API:**
-   - The API key is already configured in `src/lib/gemini.js`
-   - Replace with your own key if needed
-
-3. **Start the development server:**
-   ```bash
-   npm run dev
-   ```
-
-4. **Open in browser:**
-   ```
-   http://localhost:5173
-   ```
-
-## 🔧 Configuration
-
-### Switching LLM Models
-
-To use a different open-source LLM, modify `src/lib/llm.js`:
 
-```javascript
-// Example for different API endpoints
-const response = await axios.post('YOUR_LLM_ENDPOINT', {
-  model: 'your-model-name',
-  prompt: enhancedPrompt,
-  // ... other parameters
-});
-```
+Option B: Vercel Dashboard
 
-### Updating Domain Keywords
+Push repo to GitHub
 
-Add more construction-related keywords in `src/lib/domainGuard.js`:
+Import into Vercel
 
-```javascript
-const constructionKeywords = [
-  // ... existing keywords
-  "your-new-keyword",
-  "another-construction-term"
-];
-```
+Add environment variables (VITE_GEMINI_API_KEY, etc.)
 
-## 📁 Project Structure
+Deploy 🚀
 
-```
-src/
-├── components/           # React components
-│   ├── ChatSidebar.jsx  # Conversation history sidebar
-│   ├── ChatWindow.jsx   # Main chat display area
-│   ├── ChatInput.jsx    # Message input component
-│   └── *.css           # Component styles
-├── lib/                 # Utility libraries
-│   ├── chatService.js   # Main chat orchestration
-│   ├── domainGuard.js   # Construction domain validation
-│   ├── llm.js          # Open-source LLM integration
-│   └── gemini.js       # Google Gemini API integration
-├── App.jsx             # Main application component
-├── App.css             # Application styles
-├── index.css           # Global styles
-└── main.jsx            # Application entry point
-```
+🔒 Security
 
-## 🎯 Usage Examples
+API keys stored securely in environment variables
 
-**Ask about materials:**
-- "What are the different types of concrete and their applications?"
-- "Compare steel vs. aluminum for structural framing"
+Domain guard ensures construction-only responses
 
-**Project management questions:**
-- "How do I create a construction project timeline?"
-- "What are the key phases of construction project management?"
+CORS & security headers enabled
 
-**Safety inquiries:**
-- "What safety equipment is required on a construction site?"
-- "Explain OSHA regulations for excavation work"
+No sensitive user data stored
 
-**Cost estimation:**
-- "How do I estimate material costs for a residential project?"
-- "What factors affect construction labor costs?"
+📊 Optimizations
 
-## 🔒 Domain Restriction
+Code splitting for faster loading
 
-The chatbot automatically detects and restricts responses to construction-related topics. If a user asks about non-construction topics, it will politely redirect them back to construction industry questions.
+Gzip compression
 
-## 🚀 Deployment
+Global CDN via Vercel
 
-### Build for Production
+Source maps for debugging
 
-```bash
-npm run build
-```
+🛠️ Troubleshooting
 
-### Deploy to Vercel/Netlify
+API Key Issues
 
-1. Build the project
-2. Deploy the `dist` folder to your hosting service
-3. Configure environment variables for API keys if needed
+Check VITE_GEMINI_API_KEY spelling
 
-## 🤝 Contributing
+Ensure Google Cloud Console permissions
 
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/new-feature`
-3. Commit changes: `git commit -am 'Add new feature'`
-4. Push to branch: `git push origin feature/new-feature`
-5. Submit a pull request
+Build Errors
 
----
+Run npm run build locally
 
-**Built with ❤️ for the construction industry**te
+Verify imports & dependencies
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Routing Problems
 
-Currently, two official plugins are available:
+Check vercel.json for SPA configuration
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🤝 Contributing
 
-## Expanding the ESLint configuration
+Fork this repo
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Create a feature branch → git checkout -b feature/new-feature
+
+Commit → git commit -m "Add new feature"
+
+Push → git push origin feature/new-feature
+
+Submit Pull Request
+
+❤️ Built for the Construction Industry
+
+Helping professionals with better decisions, safer projects, and cost efficiency.
+
